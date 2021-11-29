@@ -1,7 +1,7 @@
 <template>
   <div class="lh-fl">
     <ChillOne :tuoi="name"  />
-    <ChillTwo :tuoi="name" @data:update="(e) => {name = }" />
+    <ChillTwo :tuoi="name" @data:update="(e) => {name = e}" />
     <!-- <Form /> -->
   </div>
 </template>
