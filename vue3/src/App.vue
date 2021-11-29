@@ -1,27 +1,28 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from "./components/HelloWorld.vue";
-import Form from "./components/Form.vue";
-import ChillOne from "./components/ChillOne.vue";
-import ChillTwo from "./components/ChillTwo.vue";
-</script>
-
 <template>
-  <Form />
   <div class="lh-fl">
-    <chill-one :tuoi="name" @data:update="() => { console.log('ahihi') }" />
-    <chill-two :tuoi="name" />
+    <ChillOne :tuoi="name"  />
+    <ChillTwo :tuoi="name" @data:update="(e) => {name = }" />
+    <!-- <Form /> -->
   </div>
 </template>
 <script>
+import Form from "./components/Form.vue";
+import ChillOne from "./components/ChillOne.vue";
+import ChillTwo from "./components/ChillTwo.vue";
 export default {
+  name:'App',
+  components:{
+    ChillOne,
+    ChillTwo,
+    Form
+  },
   data() {
     return {
       name: 30,
     };
   },
-  methods: {},
+  methods: {
+  },
 };
 </script>
 <style>
